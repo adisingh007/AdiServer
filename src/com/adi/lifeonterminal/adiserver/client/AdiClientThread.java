@@ -32,6 +32,8 @@ public class AdiClientThread extends Thread {
 			String[] headerParts = headerLine.split(" ");
 			String fileName = headerParts[1].substring(1, headerParts[1].length());
 			
+			// Code here for upload...
+			
 			HostedFile hostedFile = listOfFiles.get(fileName);
 			String errorCode = "200 OK";
 			if(hostedFile == null) {

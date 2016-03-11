@@ -1,0 +1,18 @@
+#!/bin/bash
+
+code=$1
+
+if [ $code -eq 0 ];
+then
+	echo "Compiling code..."
+	javac -d bin -sourcepath src src/com/adi/lifeonterminal/adiserver/AdiServerInit.java -proc:none
+	if [ $? -eq 0 ];
+	then
+		echo "Code compiled!"
+		java -cp $CLASSPATH:bin com.adi.lifeonterminal.adiserver.AdiServerInit AdiServerConf
+		cls
+	fi
+else
+	java -cp $CLASSPATH:bin com.adi.lifeonterminal.adiserver.AdiServerInit AdiServerConf
+	cls
+fi			 

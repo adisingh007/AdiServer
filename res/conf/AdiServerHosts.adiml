@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AdiServerHosts>
+
+	<file>
+		<url>404NotFound</url>
+		<name>404NotFound.html</name>
+		<mime>text/html</mime>
+	</file>
+
+	<file>
+		<url>index</url>
+		<name>index.html</name>
+		<mime>text/html</mime>
+	</file>
+
+	<file>
+		<url></url>
+		<name>index.html</name>
+		<mime>text/html</mime>
+	</file>
+
+	<file>
+		<url>hello</url>
+		<name>hello.html</name>
+		<mime>text/html</mime>
+	</file>
+	
+	<file>
+		<url>bye</url>
+		<name>bye.html</name>
+		<mime>text/html</mime>
+	</file>
+	
+	<file>
+		<url>text</url>
+		<name>test.txt</name>
+		<mime>text/plain</mime>
+	</file>
+	
+	
+	<!-- Apps -->
+	<file>
+		<url>upload</url>
+		<name>uploadSuccessful.html</name>
+		<mime>text/html</mime>
+	</file>
+</AdiServerHosts>

@@ -1,6 +1,6 @@
 package com.adi.lifeonterminal.adiserver.client;
 
-import java.io.InputStream;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.HashMap;
 
 import com.adi.lifeonterminal.adiserver.files.HostedFile;
+import com.adi.lifeonterminal.adiserver.files.FileUploader;
 
 public class AdiClientThread extends Thread {
 	
@@ -26,16 +27,27 @@ public class AdiClientThread extends Thread {
 	
 		try {
 			
-			Scanner sc = new Scanner(socket.getInputStream());
-			String headerLine = sc.nextLine().trim();
+			DataInputStream dis = new DataInputStream(socket.getInputStream());
+			String headerLine = dis.readLine().trim();
 			
 			String[] headerParts = headerLine.split(" ");
 			String fileName = headerParts[1].substring(1, headerParts[1].length());
 			
-			// Code here for upload...
-			// Edited on GitHub.com
-			// Test successful...
-			// Perfect :D
+			if(fileName.equals("adi_server_upload")) {
+			
+				int count = 0;
+				while(true) {
+					
+					String line = dis.readLine().trim();
+					if(line.length() == 0)
+						count++;
+					if(count == 1)
+						break;	
+				}
+			
+				FileUploader fup = new FileUploader(dis);
+				fup.upload();
+			}
 			
 			HostedFile hostedFile = listOfFiles.get(fileName);
 			String errorCode = "200 OK";
@@ -56,8 +68,6 @@ public class AdiClientThread extends Thread {
 			dos.write(data, 0, data.length);
 			
 			dos.flush();
-			
-			sc.close();
 			dos.close();
 			socket.close();
 		} catch(Exception e) {e.printStackTrace();}

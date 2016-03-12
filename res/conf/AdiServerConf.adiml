@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <AdiServerConf>
-	<ServerPort>8080</ServerPort>
+	<ServerPort>8989</ServerPort>
 	<HostsFile>AdiServerHosts</HostsFile>
 </AdiServerConf>

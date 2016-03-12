@@ -38,10 +38,16 @@
 		<mime>text/plain</mime>
 	</file>
 	
+	<file>
+		<url>mongo</url>
+		<name>MongoDbCommands.txt</name>
+		<mime>text/plain</mime>
+	</file>
+	
 	
 	<!-- Apps -->
 	<file>
-		<url>upload</url>
+		<url>adi_server_upload</url>
 		<name>uploadSuccessful.html</name>
 		<mime>text/html</mime>
 	</file>

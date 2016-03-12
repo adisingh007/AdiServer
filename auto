@@ -9,10 +9,11 @@ then
 	if [ $? -eq 0 ];
 	then
 		echo "Code compiled!"
-		java -cp $CLASSPATH:bin com.adi.lifeonterminal.adiserver.AdiServerInit AdiServerConf
+		java -Xms2g -Xmx2g -cp $CLASSPATH:bin com.adi.lifeonterminal.adiserver.AdiServerInit AdiServerConf
 		cls
 	fi
 else
-	java -cp $CLASSPATH:bin com.adi.lifeonterminal.adiserver.AdiServerInit AdiServerConf
+i
+	java -Xms2g -Xmx2g -cp $CLASSPATH:bin com.adi.lifeonterminal.adiserver.AdiServerInit AdiServerConf
 	cls
 fi			 
